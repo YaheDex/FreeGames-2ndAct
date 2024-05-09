@@ -63,6 +63,21 @@ def move():
         snake.pop(0)
 
     clear()
+    
+    select = randrange(0,2)
+    selectnegPos = randrange(0,2)
+    print("select", select)
+    
+    if select:
+        if selectnegPos and food.x < 190:
+            food.x = food.x +10
+        elif not selectnegPos and food.x > -200:
+            food.x = food.x -10
+    else:
+        if selectnegPos and food.y < 190:
+            food.y = food.y +10
+        elif not selectnegPos and food.y > -200:
+            food.y = food.y -10
 
     for body in snake:
         square(body.x, body.y, 9, acolor)
@@ -82,8 +97,3 @@ onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
 done()
-
-# test yahel
-
-
-# test alonso
